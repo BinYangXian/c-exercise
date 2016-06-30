@@ -1,0 +1,30 @@
+C51 COMPILER V8.08   穇真瞋试1                                                             07/02/2015 20:59:13 PAGE 1   
+
+
+C51 COMPILER V8.08, COMPILATION OF MODULE 穇真瞋试1
+OBJECT MODULE PLACED IN 仿真测试1.OBJ
+COMPILER INVOKED BY: E:\学习软件\jfsky.com-KEILUV38.08+注册机\C51\BIN\C51.EXE 仿真测试1.c BROWSE DEBUG OBJECTEXTEND TABS
+                    -(3)
+
+line level    source
+
+   1          #include<reg52.h>
+   2          sbit D1=P1^0;
+   3          void main()
+   4          {
+   5   1         D1=0;
+   6   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =      3    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

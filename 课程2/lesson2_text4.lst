@@ -1,0 +1,44 @@
+C51 COMPILER V8.08   LESSON2_TEXT4                                                         07/12/2015 12:45:32 PAGE 1   
+
+
+C51 COMPILER V8.08, COMPILATION OF MODULE LESSON2_TEXT4
+OBJECT MODULE PLACED IN lesson2_text4.obj
+COMPILER INVOKED BY: E:\学习软件\jfsky.com-KEILUV38.08+注册机\C51\BIN\C51.EXE 练习\lesson2_text4.c BROWSE DEBUG OBJECTEX
+                    -TEND PRINT(.\lesson2_text4.lst) TABS(3) OBJECT(lesson2_text4.obj)
+
+line level    source
+
+   1          #include<reg52.h>  //52单片机头文件
+   2          #include <intrins.h> //包含有左右循环移位子函数的库
+   3          #define uint unsigned int    //宏定义
+   4          #define uchar unsigned char  //宏定义
+   5          void delay(uint z)  //延时函数,z的取值为这个函数的延时ms数，如delay(200);大约延时200ms.
+   6          {              //delay(500);大约延时500ms.
+   7   1         uint x,y;
+   8   1         for(x=z;x>0;x--)
+   9   1            for(y=110;y>0;y--);  
+  10   1      }
+  11          void main()        //主函数
+  12          {
+  13   1         uchar a;
+  14   1         while(1)        //大循环
+  15   1         {
+  16   2            a++;
+  17   2            P1=~a;
+  18   2            delay(2000);   
+  19   2         }
+  20   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     46    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

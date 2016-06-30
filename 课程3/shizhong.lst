@@ -1,0 +1,39 @@
+C51 COMPILER V8.08   SHIZHONG                                                              08/06/2015 23:36:32 PAGE 1   
+
+
+C51 COMPILER V8.08, COMPILATION OF MODULE SHIZHONG
+OBJECT MODULE PLACED IN .\shizhong.obj
+COMPILER INVOKED BY: E:\学习软件\jfsky.com-KEILUV38.08+注册机\C51\BIN\C51.EXE E:\十天学会单片机（郭天祥）\lesson11\例程\
+                    -shizhong.c BROWSE DEBUG OBJECTEXTEND PRINT(.\shizhong.lst) TABS(3) OBJECT(.\shizhong.obj)
+
+line level    source
+
+*** WARNING C318 IN LINE 2 OF E:\十天学会单片机（郭天祥）\lesson11\莱蘚shizhong.c: can't open file 'define.h'
+*** ERROR C141 IN LINE 3 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: syntax error near 'z', expected ')'
+*** ERROR C141 IN LINE 5 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: syntax error near 'x'
+*** ERROR C202 IN LINE 5 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'x': undefined identifier
+*** ERROR C202 IN LINE 6 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'x': undefined identifier
+*** ERROR C202 IN LINE 7 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'y': undefined identifier
+*** ERROR C202 IN LINE 12 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'beep': undefined identifier
+*** ERROR C202 IN LINE 14 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'beep': undefined identifier
+*** ERROR C202 IN LINE 16 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'beep': undefined identifier
+*** ERROR C202 IN LINE 18 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'beep': undefined identifier
+*** ERROR C141 IN LINE 20 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: syntax error near 'com', expected ')'
+*** ERROR C202 IN LINE 22 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'rs': undefined identifier
+*** ERROR C202 IN LINE 23 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'lcden': undefined identifier
+*** ERROR C202 IN LINE 24 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'com': undefined identifier
+*** ERROR C202 IN LINE 26 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'lcden': undefined identifier
+*** ERROR C202 IN LINE 28 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'lcden': undefined identifier
+*** ERROR C141 IN LINE 31 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: syntax error near 'date', expected ')'
+*** ERROR C202 IN LINE 33 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'rs': undefined identifier
+*** ERROR C202 IN LINE 34 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'lcden': undefined identifier
+*** ERROR C202 IN LINE 35 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'date': undefined identifier
+*** ERROR C202 IN LINE 37 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'lcden': undefined identifier
+*** ERROR C202 IN LINE 39 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'lcden': undefined identifier
+*** ERROR C202 IN LINE 44 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'uchar': undefined identifier
+*** ERROR C141 IN LINE 44 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: syntax error near 'num'
+*** ERROR C202 IN LINE 49 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'dula': undefined identifier
+*** ERROR C202 IN LINE 50 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'wela': undefined identifier
+*** ERROR C202 IN LINE 51 OF E:\十天学会单片机（郭天祥）\LESSON11\莱蘚SHIZHONG.C: 'lcden': undefined identifier
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  26 ERROR(S)

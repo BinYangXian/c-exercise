@@ -1,0 +1,66 @@
+C51 COMPILER V8.08   LESSON2_TEXT3                                                         07/12/2015 11:43:15 PAGE 1   
+
+
+C51 COMPILER V8.08, COMPILATION OF MODULE LESSON2_TEXT3
+OBJECT MODULE PLACED IN lesson2_text3.obj
+COMPILER INVOKED BY: E:\Ñ§Ï°Èí¼þ\jfsky.com-KEILUV38.08+×¢²á»ú\C51\BIN\C51.EXE Á·Ï°\lesson2_text3.c BROWSE DEBUG OBJECTEX
+                    -TEND PRINT(.\lesson2_text3.lst) TABS(3) OBJECT(lesson2_text3.obj)
+
+line level    source
+
+   1          #include<reg52.h>
+   2          #include<intrins.h>
+   3          #define uint unsigned int
+   4          sbit beep=P2^3;
+   5          void delay(uint);
+   6          void main()
+   7          {
+   8   1         uint temp,i;
+   9   1         while(1)
+  10   1         {
+  11   2            temp=0xfe;
+  12   2            for(i=7;i>0;i--)
+  13   2               {
+  14   3                  P1=temp;
+  15   3                  beep=0;
+  16   3                  delay(100);
+  17   3                  P1=0xff;
+  18   3                  beep=1;
+  19   3                  delay(100);
+  20   3                  temp=_crol_(temp,1);
+  21   3               }
+  22   2            temp=0x7f;
+  23   2            for(i=7;i>0;i--)
+  24   2               {
+  25   3                  P1=temp;
+  26   3                  beep=0;
+  27   3                  delay(100);
+  28   3                  P1=0xff;
+  29   3                  beep=1;
+  30   3                  delay(100);
+  31   3                  temp=_cror_(temp,1);
+  32   3               }
+  33   2      
+  34   2         }
+  35   1      }
+  36          void delay(uint z)
+  37          {
+  38   1         uint x;
+  39   1         uint y;
+  40   1         for(x=200;x>0;x--)     
+  41   1            for(y=z;y>0;y--); 
+  42   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    161    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

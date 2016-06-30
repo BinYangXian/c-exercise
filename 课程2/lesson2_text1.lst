@@ -1,0 +1,45 @@
+C51 COMPILER V8.08   LESSON2_TEXT1                                                         07/11/2015 21:02:53 PAGE 1   
+
+
+C51 COMPILER V8.08, COMPILATION OF MODULE LESSON2_TEXT1
+OBJECT MODULE PLACED IN lesson2_text1.obj
+COMPILER INVOKED BY: E:\学习软件\jfsky.com-KEILUV38.08+注册机\C51\BIN\C51.EXE 练习\lesson2_text1.c BROWSE DEBUG OBJECTEX
+                    -TEND PRINT(.\lesson2_text1.lst) TABS(3) OBJECT(lesson2_text1.obj)
+
+line level    source
+
+   1          #include<reg52.h>
+   2          #define uint unsigned int
+   3          sbit A=P1^0;//sbit A;
+   4          //A=P1^0;
+   5          void delay(uint);//uint不加z，加分号
+   6          void main()
+   7          {
+   8   1         while(1)
+   9   1         {
+  10   2            A=0;
+  11   2            delay(180);
+  12   2            A=1;
+  13   2            delay(180); 
+  14   2         }
+  15   1      }
+  16          void  delay(uint z)//uint要加z
+  17          {
+  18   1         uint x,y;
+  19   1         for(x=100;x>0;x--)
+  20   1            for(y=z;y>0;y--); //要加分号
+  21   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     54    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

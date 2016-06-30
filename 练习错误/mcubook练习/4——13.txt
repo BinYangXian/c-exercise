@@ -1,0 +1,19 @@
+#include<stdio.h>
+void main()
+{
+
+	unsigned char table[3],i,j,temp;
+	printf("input three numble:\n");
+	for(i=0;i<3;i++)
+		scanf("%c\n",&table[i]);
+	for(j=0;j<2;j++)	
+		for(i=0;i<2-j;i++)
+			if(table[i]<table[i+1])
+			{
+				temp=table[i];
+				table[i]=table[i+1];
+				table[i+1]=temp;
+			}
+	printf("output %c,%c,%c",table[0],table[1],table[2]);
+
+}

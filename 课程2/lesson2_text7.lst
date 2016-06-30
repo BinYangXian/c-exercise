@@ -1,0 +1,88 @@
+C51 COMPILER V8.08   LESSON2_TEXT7                                                         07/12/2015 17:04:52 PAGE 1   
+
+
+C51 COMPILER V8.08, COMPILATION OF MODULE LESSON2_TEXT7
+OBJECT MODULE PLACED IN lesson2_text7.obj
+COMPILER INVOKED BY: E:\学习软件\jfsky.com-KEILUV38.08+注册机\C51\BIN\C51.EXE 练习\lesson2_text7.c BROWSE DEBUG OBJECTEX
+                    -TEND PRINT(.\lesson2_text7.lst) TABS(3) OBJECT(lesson2_text7.obj)
+
+line level    source
+
+   1             #include<reg52.h>  //52单片机头文件
+   2          #include <intrins.h> //包含有左右循环移位子函数的库
+   3          #define uint unsigned int    //宏定义
+   4          #define uchar unsigned char  //宏定义
+   5          void delay(uint z)  //延时函数,z的取值为这个函数的延时ms数，如delay(200);大约延时200ms.
+   6          {              //delay(500);大约延时500ms.
+   7   1         uint x,y;
+   8   1         for(x=z;x>0;x--)
+   9   1            for(y=110;y>0;y--);  
+  10   1      }
+  11          void main()        //主函数
+  12          {
+  13   1         uchar a,i,j;
+  14   1         for(j=0;j<3;j++)      //寄偶交替
+  15   1         {
+  16   2               P1=0x55;       //点亮小灯
+  17   2               delay(300); //延时300毫秒
+  18   2               P1=0xaa;
+  19   2               delay(300); //延时300毫秒
+  20   2         }
+  21   1         for(j=0;j<3;j++)    //流水灯
+  22   1         {
+  23   2            a=0xfe;
+  24   2            for(i=0;i<8;i++)
+  25   2               {
+  26   3                  P1=a;       //点亮小灯
+  27   3                  delay(300); //延时300毫秒
+  28   3                  a=_crol_(a,1);
+  29   3               }
+  30   2         }
+  31   1         P1=0xff;
+  32   1         a=0xfe;
+  33   1         i=0x7f;
+  34   1         for(j=0;j<24;j++)     //从两边往中间流
+  35   1         {
+  36   2            P1=~(~a|~i);
+  37   2            delay(300);
+  38   2            a=_crol_(a,1);
+  39   2            i=_cror_(i,1);
+  40   2         }
+  41   1         P1=0xff;
+  42   1         for(j=0;j<3;j++)    //从中间往两边流
+  43   1         {
+  44   2               P1=0xe7;       //点亮小灯
+  45   2               delay(300); //延时300毫秒
+  46   2               P1=0xdb;
+  47   2               delay(300); //延时300毫秒
+  48   2               P1=0xbd;       //点亮小灯
+  49   2               delay(300); //延时300毫秒
+  50   2               P1=0x7e;
+  51   2               delay(300); //延时300毫秒
+  52   2         }
+  53   1         P1=0xff;
+  54   1         for(j=0;j<6;j++)    //全部闪烁
+C51 COMPILER V8.08   LESSON2_TEXT7                                                         07/12/2015 17:04:52 PAGE 2   
+
+  55   1         {
+  56   2               P1=~P1;       //点亮小灯
+  57   2               delay(300); //延时300毫秒
+  58   2         }
+  59   1         P1=0xff;
+  60   1         while(1);
+  61   1      }
+  62          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    185    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

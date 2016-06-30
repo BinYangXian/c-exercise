@@ -1,0 +1,37 @@
+C51 COMPILER V8.08   LESSON3_1                                                             07/15/2015 12:19:39 PAGE 1   
+
+
+C51 COMPILER V8.08, COMPILATION OF MODULE LESSON3_1
+OBJECT MODULE PLACED IN lesson3_1.OBJ
+COMPILER INVOKED BY: E:\Ñ§Ï°Èí¼þ\jfsky.com-KEILUV38.08+×¢²á»ú\C51\BIN\C51.EXE lesson3_1.c BROWSE DEBUG OBJECTEXTEND TABS
+                    -(3)
+
+line level    source
+
+   1          #include<reg52.h>
+   2          sbit dula=P2^6;
+   3          sbit wela=P2^7;
+   4          void main()
+   5          {
+   6   1         wela=1;
+   7   1         P0=0xc0;
+   8   1         wela=0;
+   9   1         dula=1;
+  10   1         P0=0x3f;
+  11   1         dula=0;
+  12   1         while(1);
+  13   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     16    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,77 @@
+C51 COMPILER V8.08   TEXT4                                                                 07/17/2015 12:04:23 PAGE 1   
+
+
+C51 COMPILER V8.08, COMPILATION OF MODULE TEXT4
+OBJECT MODULE PLACED IN Text4.obj
+COMPILER INVOKED BY: E:\学习软件\jfsky.com-KEILUV38.08+注册机\C51\BIN\C51.EXE 练习\Text4.c BROWSE DEBUG OBJECTEXTEND PRI
+                    -NT(.\Text4.lst) TABS(3) OBJECT(Text4.obj)
+
+line level    source
+
+   1          #include<reg52.h>  //52单片机头文件
+   2          #include <intrins.h> //包含有左右循环移位子函数的库
+   3          #define uint unsigned int    //宏定义
+   4          #define uchar unsigned char  //宏定义
+   5          sbit dula=P2^6;       //数码管段选锁存端
+   6          sbit wela=P2^7;       ////数码管位选锁存端
+   7          uchar num,tt;
+   8          uchar code table[]={
+   9          0x3f,0x06,0x5b,0x4f,
+  10          0x66,0x6d,0x7d,0x07,
+  11          0x7f,0x6f,0x77,0x7c,
+  12          0x39,0x5e,0x79,0x71};
+  13          void main()
+  14          {
+  15   1         num=0;
+  16   1         tt=0;
+  17   1         TMOD=0x01;//设置定时器0为工作方式1
+  18   1         TH0=(65536-50000)/256;
+  19   1         TL0=(65536-50000)%256;
+  20   1         EA=1;//开总中断
+  21   1         ET0=1;//开定时器0中断
+  22   1         TR0=1;//启动定时器0
+  23   1         dula=1;
+  24   1         P0=0x3f;  //给段开始送显示0。
+  25   1         dula=0;//关闭段选锁存端，防止开始时出现乱码。
+  26   1         wela=1;//11101010
+  27   1         P0=0xc0; // 打开六个数码管位选
+  28   1         wela=0;
+  29   1         while(1)
+  30   1         {
+  31   2         
+  32   2         }
+  33   1      }
+  34          
+  35          
+  36          void exter0() interrupt 1    // 定时器0中断
+  37          {
+  38   1         TH0=(65536-50000)/256;
+  39   1         TL0=(65536-50000)%256;
+  40   1         tt++;
+  41   1            if(tt==10)   //每进入10次中断即为500ms,执行一次显示变化。
+  42   1               {
+  43   2                  tt=0;
+  44   2                  num++;
+  45   2                  if(num==16)
+  46   2                  num=0;
+  47   2                  dula=1;
+  48   2                  P0=table[num];
+  49   2                  dula=0;  
+  50   2               }
+  51   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+C51 COMPILER V8.08   TEXT4                                                                 07/17/2015 12:04:23 PAGE 2   
+
+   CODE SIZE        =     91    ----
+   CONSTANT SIZE    =     16    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

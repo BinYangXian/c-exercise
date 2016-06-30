@@ -1,0 +1,85 @@
+BL51 BANKED LINKER/LOCATER V6.05                                                        07/03/2015  15:48:54  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.05, INVOKED BY:
+E:\学习软件\JFSKY.COM-KEILUV38.08+注册机\C51\BIN\BL51.EXE .\lesson2.obj TO lesson2 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\lesson2.obj (LESSON2)
+  E:\学习软件\JFSKY.COM-KEILUV38.08+注册机\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  lesson2 (LESSON2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         ?DT?LESSON2
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0052H     UNIT         ?PR?MAIN?LESSON2
+            CODE    0055H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   lesson2 (LESSON2)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LESSON2
+
+
+
+SYMBOL TABLE OF MODULE:  lesson2 (LESSON2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LESSON2
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0003H         PUBLIC        main
+  B:0090H.0       PUBLIC        p1_1
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:0008H         PUBLIC        a
+  D:00C8H         PUBLIC        T2CON
+BL51 BANKED LINKER/LOCATER V6.05                                                      07/03/2015  15:48:54  PAGE 2
+
+
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:0003H         LINE#         4
+  C:0003H         LINE#         5
+  C:0003H         LINE#         6
+  C:0003H         LINE#         7
+  C:0003H         LINE#         8
+  C:0009H         LINE#         9
+  C:000BH         LINE#         10
+  C:0018H         LINE#         11
+  C:001EH         LINE#         12
+  C:002BH         LINE#         13
+  C:0031H         LINE#         14
+  C:0033H         LINE#         15
+  C:0040H         LINE#         16
+  C:0046H         LINE#         17
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LESSON2
+
+Program Size: data=11.0 xdata=0 code=97
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

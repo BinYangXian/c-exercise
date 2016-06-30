@@ -1,0 +1,53 @@
+C51 COMPILER V8.08   LESSON2_3                                                             07/12/2015 11:08:25 PAGE 1   
+
+
+C51 COMPILER V8.08, COMPILATION OF MODULE LESSON2_3
+OBJECT MODULE PLACED IN lesson2_3.OBJ
+COMPILER INVOKED BY: E:\Ñ§Ï°Èí¼þ\jfsky.com-KEILUV38.08+×¢²á»ú\C51\BIN\C51.EXE lesson2_3.c BROWSE DEBUG OBJECTEXTEND TABS
+                    -(3)
+
+line level    source
+
+   1          #include<reg52.h>
+   2          #include<intrins.h>
+   3          #define uint unsigned int 
+   4          #define uchar unsigned char
+   5          uchar temp; 
+   6          sbit beep=P2^3;
+   7          void delay(uint);
+   8          void main()
+   9          {
+  10   1         temp=0xfe;
+  11   1         while(1)
+  12   1         {
+  13   2            beep=0; 
+  14   2            P1=temp;
+  15   2            delay(230);
+  16   2            P1=0xff;
+  17   2            beep=1; 
+  18   2            delay(230); 
+  19   2            temp=_crol_(temp,1);
+  20   2         
+  21   2         }
+  22   1      }
+  23          void delay(uint z)
+  24          {
+  25   1         uint x;
+  26   1         uint y;
+  27   1         for(x=200;x>0;x--)     
+  28   1            for(y=z;y>0;y--); 
+  29   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     76    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

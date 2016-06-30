@@ -1,0 +1,4 @@
+"STARTUP.obj",
+".\lesson1_1.obj" 
+TO "lesson_1-1" 
+RAMSIZE(256) 

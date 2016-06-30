@@ -1,0 +1,103 @@
+C51 COMPILER V8.08   TEXT2                                                                 07/18/2015 14:33:36 PAGE 1   
+
+
+C51 COMPILER V8.08, COMPILATION OF MODULE TEXT2
+OBJECT MODULE PLACED IN .\Text2.obj
+COMPILER INVOKED BY: E:\学习软件\jfsky.com-KEILUV38.08+注册机\C51\BIN\C51.EXE G:\课程4\Text2.c BROWSE DEBUG OBJECTEXTEND
+                    - PRINT(.\Text2.lst) TABS(3) OBJECT(.\Text2.obj)
+
+line level    source
+
+   1          #include<reg52.h>
+   2          #define uchar unsigned char  //宏定义
+   3          #define uint unsigned int  
+   4          void display(uchar,uchar,uchar); //函数声明//void display() ;
+   5          sbit wela=P2^7;
+   6          sbit dula=P2^6;
+   7          uchar ge,shi,bai;
+   8          uint x,y,num;
+   9          uchar code table[]={
+  10          0x3f,0x06,0x5b,0x4f,
+  11          0x66,0x6d,0x7d,0x07,
+  12          0x7f,0x6f,0x77,0x7c,
+  13          0x39,0x5e,0x79,0x71};
+  14          void delay (uint z)
+  15          {
+  16   1         for(x=z;x>0;x--)
+  17   1            for(y=110;y>0;y--);
+  18   1      }
+  19          void main()
+  20          {
+  21   1         TMOD=0x10;//竟然忘了！！！！
+  22   1         num=0;
+  23   1         TH1=(65536-10000)/256;
+  24   1         TL1=(65536-10000)%256;
+  25   1         EA=1;
+  26   1         ET1=1;
+  27   1         TR1=1;
+  28   1         while(1) //不可加分好；！  ！！
+  29   1         {
+  30   2               display(ge,shi,bai);////display();
+  31   2         }
+  32   1      }
+  33          void timer1() interrupt 3//优先级别！！不可为1
+  34          {
+  35   1         TH1=(65536-10000)/256;
+  36   1         TL1=(65536-10000)%256;
+  37   1         num++;
+  38   1         if(num==1000)
+  39   1         num=0;
+  40   1         bai=num/100;
+  41   1         shi=num%100/10;
+  42   1         ge=num%10;
+  43   1         //display(bai,shi,ge)；不可放于此，影响定时器频率
+  44   1      }
+  45          void display(uchar ge,uchar shi,uchar bai)//void display(uint num)
+  46          {  
+  47   1      
+  48   1            //bai=num/100;
+  49   1         // shi=num%100/10;
+  50   1            //ge=num%10;    
+  51   1            dula=1;
+  52   1            P0=table[ge];
+  53   1            dula=0;
+  54   1            P0=0xff;
+C51 COMPILER V8.08   TEXT2                                                                 07/18/2015 14:33:36 PAGE 2   
+
+  55   1            wela=1;
+  56   1            P0=0xfb;
+  57   1            wela=0;
+  58   1            delay(25);  //bai位显示约2.5ms
+  59   1         
+  60   1            dula=1;
+  61   1            P0=table[shi];
+  62   1            dula=0;
+  63   1            P0=0xff;
+  64   1            wela=1;
+  65   1            P0=0xfd;
+  66   1            wela=0;
+  67   1            delay(25);     //shi位显示约2.5ms
+  68   1         
+  69   1            dula=1;
+  70   1            P0=table[bai];
+  71   1            dula=0;
+  72   1            P0=0xff;
+  73   1            wela=1;
+  74   1            P0=0xfe;
+  75   1            wela=0;
+  76   1            delay(25);     //ge位显示约2.5ms
+  77   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    267    ----
+   CONSTANT SIZE    =     16    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      9    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
